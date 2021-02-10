@@ -10,8 +10,7 @@ pipeline {
 
             steps {
 			    echo '****************************** Compiling ***************************************'
-                withMaven(maven : 'maven3') {
-                    bat 'mvn clean install'
+                bat 'mvn clean package install -DskipTests'
                 }
             }
         }
