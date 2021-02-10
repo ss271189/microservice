@@ -11,7 +11,7 @@ pipeline {
             steps {
 			    echo '****************************** Compiling ***************************************'
                 bat 'mvn clean package install -DskipTests'
-                }
+                
             }
         }
 
