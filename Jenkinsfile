@@ -18,17 +18,17 @@ pipeline {
         stage ('Testing Stage') {
 
             steps {
-			    echo '****************************** Testing ***************************************'
-                withMaven(maven : 'maven3') {
+	            echo '****************************** Testing ***************************************'
+               
                     bat 'mvn test'
-                }
+                
             }
         }
 
 
         stage('Docker Image'){
             steps{
-			 echo '****************************** Building Docker Image ***************************************'
+             echo '****************************** Building Docker Image ***************************************'
              bat 'docker build -t i_football_league --no-cache -f Dockerfile .'
             }
         }
