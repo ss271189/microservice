@@ -54,7 +54,7 @@ pipeline {
 	    stage('Docker Deployment'){
              steps{
 			 echo '****************************** Deploying  Docker Image ***************************************'
-             bat 'docker container run --name c_football_league -d -p 8085:8085 i_football_league'
+             bat 'docker container run --name c_football_league -d -p 8100:8100 i_football_league'
             }
         }	
     }
