@@ -32,6 +32,24 @@ pipeline {
              bat 'docker build -t i_football_league --no-cache -f Dockerfile .'
             }
         }
+	    stage('Pre container check') {
+                    steps {
+                         echo '****************************** Pre Container check ***************************************'
+                         script {
+                         
+                         containerID = powershell(returnStdout: true, script:'docker ps -af name=c_football_league --format "{{.ID}}"')
+                         if(containerID)
+				         {
+                        bat "docker stop ${containerID}"
+					    bat "docker rm -f ${containerID}"
+				         }
+
+                        }  
+
+
+                        
+                    }
+                }
 		
 	    stage('Docker Deployment'){
              steps{
