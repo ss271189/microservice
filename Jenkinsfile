@@ -1,5 +1,9 @@
 pipeline {
     agent any
+	
+	tools {
+        maven 'maven3'
+    }
 
     stages {
         stage ('Compile Stage') {
@@ -7,7 +11,7 @@ pipeline {
             steps {
 			    echo '****************************** Compiling ***************************************'
                 withMaven(maven : 'maven3') {
-                    cat 'mvn clean install'
+                    bat 'mvn clean install'
                 }
             }
         }
@@ -17,7 +21,7 @@ pipeline {
             steps {
 			    echo '****************************** Testing ***************************************'
                 withMaven(maven : 'maven3') {
-                    cat 'mvn test'
+                    bat 'mvn test'
                 }
             }
         }
