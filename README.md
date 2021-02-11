@@ -19,3 +19,11 @@ League ID & Name: "(149) - Championship",
 Team ID & Name: "(2615) - Bournemouth",
 overallPosition: 6
 }
+
+
+CI/CD
+
+1) Create a Jenkins pipeline job. 
+2) Pipeline to be selected as JenkinsFile and Link of the gihub repo
+3) Assumption is made that Jenkins and Docker host resides on same VM.
+4) Pipeline with automatically spawn a container running on port 8100. In case of any conflict change the port in Jenkins file.
