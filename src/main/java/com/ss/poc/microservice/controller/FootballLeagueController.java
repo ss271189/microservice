@@ -25,7 +25,9 @@ public class FootballLeagueController {
     @GetMapping(path = "/teams/standing")
     public TeamStandingResponse getTeamStandings(@Valid TeamStandingRequest teamStandingRequest) {
         log.info(" Request : {}",teamStandingRequest);
-        return footballLeagueService.getTeamStandings(teamStandingRequest);
+        TeamStandingResponse teamStandingResponse=footballLeagueService.getTeamStandings(teamStandingRequest);
+        log.info(" Resposne : {}",teamStandingResponse);
+        return teamStandingResponse;
     }
 
 

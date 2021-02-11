@@ -18,7 +18,7 @@ import java.util.Date;
 @RestController
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(InvalidRequestParameter.class)
+    @ExceptionHandler(InvalidRequestParameterException.class)
     public final ResponseEntity<Object> handleInvalidRequestParameterException(Exception ex, WebRequest req) {
         CustomExceptionResponse customExceptionResponse = new CustomExceptionResponse(new Date(), ex.getMessage(), req.getDescription(false));
         return new ResponseEntity<>(customExceptionResponse, HttpStatus.BAD_REQUEST);
